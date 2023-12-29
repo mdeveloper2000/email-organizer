@@ -1,0 +1,23 @@
+<%- include("../partials/header") %>
+
+    <div class="container">
+        <%- include("../partials/top") %>
+        <form>
+            <h2>
+                <i class="fa-solid fa-pen-to-square"></i> Edit e-mail
+            </h2>
+            <input type="hidden" id="email_id" value="<%=email._id%>" />
+            <input type="email" id="address" placeholder="E-mail" maxlength="100" style="width: 96%;" required value="<%=email.address%>" />
+            <button class="btn edit-email">
+                <i class="fa-solid fa-pen-to-square"></i> Update
+            </button>
+            <div class="messages">
+                <i class="fa-solid fa-circle-exclamation"></i> <span class="messages-text"></span>
+            </div>
+        </form>
+    </div>
+
+    <script src="/js/email.js"></script>
+
+</body>
+</html>

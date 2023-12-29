@@ -1,0 +1,20 @@
+<%- include("../partials/header") %>
+
+    <div class="container">
+        <%- include("../partials/top") %>
+        <form>
+            <h2><i class="fa-solid fa-circle-info"></i> Register e-mail</h2>
+            <input type="email" name="email" placeholder="E-mail" maxlength="100" style="width: 96%;" required />
+            <button class="btn create-email">
+                <i class="fa-solid fa-floppy-disk"></i> Save
+            </button>
+            <div class="messages">
+                <i class="fa-solid fa-circle-exclamation"></i> <span class="messages-text"></span>
+            </div>
+        </form>
+    </div>
+
+    <script src="/js/email.js"></script>
+
+</body>
+</html>

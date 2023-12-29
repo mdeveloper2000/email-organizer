@@ -1,0 +1,30 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="container">
+    <%- include("../partials/top.ejs") %>
+    <h2>
+        <i class="fa-solid fa-rectangle-list"></i> Subscriptions for email: <i><%= email.address %></i>        
+    </h2>
+    <a class="btn" href="/subscription/create/<%=email._id%>" style="margin-top: 0; margin-bottom: 15px;">
+        <i class="fa-solid fa-circle-plus"></i> Add Subscription
+    </a>
+    <% subscriptions.forEach((subscription) => { %>
+        <div class="subscription">
+            <h3>Item: <%= subscription.item %></h3>
+            <h4>Status: <%= subscription.status %></h4>
+            <h5>Extra: <%= subscription.extra %></h5>
+            <a href="/subscription/edit/<%=subscription._id%>/<%=email._id%>" style="color: #00f;">
+                <i class="fa-solid fa-pen-to-square"></i> Edit
+            </a>
+            <a href="/subscription/delete/<%=subscription._id%>/<%=email._id%>" style="color: #f00; float: right;">
+                <i class="fa fa-trash"></i> Delete
+            </a>
+        </div>
+    <% }) %>
+</div>
+
+<script src="/js/subscription.js"></script>
+
+</body>
+
+</html>

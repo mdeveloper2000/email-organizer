@@ -1,0 +1,33 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="container">
+    <%- include("../partials/top.ejs") %>
+    <form>
+        <h2>
+            <i class="fa-solid fa-pen-to-square"></i> Edit subscription
+        </h2>
+        <input type="hidden" id="subscription_id" value="<%=subscription._id%>" />
+        <input type="hidden" id="email_id" value="<%=email_id%>" />
+        <input type="text" id="item" placeholder="Item" maxlength="100" required style="width: 96%;" 
+        onblur="this.value=this.value.trim()" value="<%= subscription.item %>" />
+        <select id="status" required>
+            <option value="">Choose status of subscription</option>
+            <option <% if(subscription.status == "RECOVERY") { %> selected <% } %>>RECOVERY</option>
+            <option <% if(subscription.status == "SUBSCRIPTION") { %> selected <% } %>>SUBSCRIPTION</option>
+            <option <% if(subscription.status == "OTHER") { %> selected <% } %>>OTHER</option>
+        </select>
+        <textarea id="extra" maxlength="200" placeholder="Add extra information if needed"><%= subscription.extra %></textarea>
+        <button type="submit" class="btn edit-subscription">
+            <i class="fa-solid fa-pen-to-square"></i> Update
+        </button>
+        <div class="messages">
+            <i class="fa-solid fa-circle-exclamation"></i> <span class="messages-text"></span>
+        </div>
+    </form>
+</div>
+
+<script src="/js/subscription.js"></script>
+
+</body>
+
+</html>

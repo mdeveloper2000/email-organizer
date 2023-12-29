@@ -1,0 +1,55 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <%- include("../partials/top") %>
+    <a class="btn" href="/email/create">
+        <i class="fa-solid fa-square-plus"></i> Register e-mail
+    </a>
+    <table>
+        <thead>
+            <th>Addresses</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>            
+            <% emails.forEach((email) => { %>
+                <tr>
+                    <td><%= email.address %></td>
+                    <td>
+                        <a class="btn" href="/subscription/create/<%=email._id%>">
+                            <i class="fa-solid fa-circle-plus"></i> Add
+                        </a>
+                        <a class="btn read" href="/subscription/read/<%=email._id%>">
+                            <i class="fa-solid fa-book-open-reader"></i> Read
+                        </a>
+                        <a class="btn edit" href="/email/edit/<%=email._id%>">
+                            <i class="fa-solid fa-pen-to-square"></i> Edit
+                        </a>
+                        <a class="btn delete" onclick="deleteEmail('<%=email._id%>');">
+                            <i class="fa-solid fa-trash"></i> Delete
+                        </a>
+                    </td>
+                </tr>                
+            <% }) %>            
+        </tbody>
+    </table>
+</div>
+
+<script>
+    async function deleteEmail(email_id) {        
+        const res = await fetch('/email/delete', {
+            method: 'POST',
+            body: JSON.stringify({ email_id }),
+            headers: { 'Content-Type': 'application/json' }
+        })
+        const data = await res.json()
+        if(data.error === 0) {
+            window.location.href = "/"
+        }
+        else {
+            alert(data.message)
+        }
+    }
+</script>
+
+</body>
+</html>

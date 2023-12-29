@@ -1,0 +1,31 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="container">
+    <%- include("../partials/top.ejs") %>
+    <form>
+        <h2>
+            <i class="fa-solid fa-circle-plus"></i> Create subscription
+        </h2>
+        <input type="hidden" id="_id" value="<%=_id%>" />
+        <input type="text" id="item" placeholder="Item" maxlength="100" required style="width: 96%;" onblur="this.value=this.value.trim()" />
+        <select id="status" required>
+            <option value="">Choose status of subscription</option>
+            <option>RECOVERY</option>
+            <option>SUBSCRIPTION</option>
+            <option>OTHER</option>            
+        </select>
+        <textarea id="extra" maxlength="200" placeholder="Add extra information if needed"></textarea>
+        <button type="submit" class="btn new-subscription">
+            <i class="fa-solid fa-floppy-disk"></i> Save
+        </button>
+        <div class="messages">
+            <i class="fa-solid fa-circle-exclamation"></i> <span class="messages-text"></span>
+        </div>
+    </form>
+</div>
+
+<script src="/js/subscription.js"></script>
+
+</body>
+
+</html>
