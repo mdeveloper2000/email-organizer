@@ -1,0 +1,129 @@
+body {
+    background-color: #AFE1AF;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.top {
+    padding: 20px;
+    border: 1px solid #228B22;
+    border-radius: 12px;    
+}
+
+.btn {
+    padding: 10px;
+    width: 150px;
+    align-self: flex-end;
+    border-radius: 8px;
+    border: none;
+    background-color: #228B22;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 15px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;    
+}
+
+.read {
+    background-color: #00f;
+}
+
+.edit {
+    background-color: #CCCC00;
+}
+
+.delete {
+    background-color: #f00;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 30px;
+    border: 1px solid #228B22;
+    padding: 20px 20px 20px 20px;
+    border-radius: 12px;
+}
+
+input[type=email], input[type=text], select {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
+    margin-top: 15px;
+}
+
+textarea {
+    resize: none;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: none;
+    padding: 15px;
+}
+
+.messages {
+    display: none;
+    margin-top: 15px;
+    border-radius: 8px;
+    background-color: #f00;
+    padding: 20px;
+    color: #fff;    
+}
+
+table {
+    margin: 15px 0;
+    border-collapse: collapse;
+}
+
+table td, table th {
+    border: 1px solid #228B22;
+    padding: 15px;
+}
+
+table tr:nth-child(even){
+    background-color: #04AA6D;
+}
+
+table tr:hover {
+    background-color: #AAFF00;
+}
+
+table th {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: #fff;
+    font-size: 20px;
+}
+
+.container h2 {
+    background-color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 12px;
+}
+
+.subscription {
+    padding: 15px 25px;
+    border-radius: 12px;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+.subscription a {
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #04AA6D;
+    padding: 5px;
+}
